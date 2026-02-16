@@ -1,0 +1,418 @@
+/**
+ * Branches Page Styles
+ */
+
+.branches-page {
+    padding: 0;
+}
+
+/* Map Container */
+.map-container {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-map {
+    width: 100%;
+    height: 400px;
+    background: #e0e0e0;
+}
+
+.map-legend {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    gap: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 0;
+}
+
+.legend-dot.main {
+    background: #EF4136;
+}
+
+.legend-dot.sales {
+    background: #4CAF50;
+}
+
+.legend-dot.franchise {
+    background: #FF7F27;
+}
+
+.legend-dot.inactive {
+    background: #999;
+}
+
+/* Legend Sections */
+.legend-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.legend-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legend-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 8px 0;
+}
+
+.toggle-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    background: #f5f5f5;
+}
+
+.toggle-btn.active {
+    background: #EF4136;
+    border-color: #EF4136;
+    color: #fff;
+}
+
+.legend-arrow {
+    font-size: 10px;
+    width: 12px;
+    text-align: center;
+}
+
+.legend-arrow.inside {
+    color: #4CAF50;
+}
+
+.legend-arrow.outside {
+    color: #EF4136;
+}
+
+.legend-arrow.offline {
+    color: #999;
+}
+
+.legend-info {
+    font-size: 11px;
+    color: #4CAF50;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Branches Grid */
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.branch-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.branch-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.branch-card.inactive {
+    opacity: 0.7;
+    background: #f5f5f5;
+}
+
+/* Search Styles */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.search-input {
+    padding: 10px 16px 10px 40px;
+    /* Added left padding for icon */
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 14px;
+    width: 250px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    border-color: #EF4136;
+    box-shadow: 0 0 0 2px rgba(239, 65, 54, 0.1);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.branch-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.branch-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 8px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.branch-address {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.branch-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 0;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.branch-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.branch-actions .action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.branch-actions .action-btn.edit {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.branch-actions .action-btn.edit:hover {
+    background: #bbdefb;
+}
+
+.branch-actions .action-btn.delete {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.branch-actions .action-btn.delete:hover {
+    background: #ffcdd2;
+}
+
+/* Modal Large */
+.modal-large {
+    max-width: 600px;
+}
+
+.modal-body-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.map-section {
+    background: #f0f7ff;
+    padding: 16px;
+    border-radius: 0;
+    text-align: center;
+}
+
+.map-hint {
+    margin: 0;
+    color: #1976d2;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.location-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.radius-slider {
+    width: 100%;
+    height: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 0;
+    outline: none;
+}
+
+.radius-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.radius-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-icon {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.empty-state p {
+    color: #666;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}

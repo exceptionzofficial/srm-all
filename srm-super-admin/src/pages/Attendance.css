@@ -1,0 +1,264 @@
+/* Attendance Page Styles */
+
+.attendance-page {
+    max-width: 1400px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.date-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    transition: var(--transition);
+}
+
+.date-picker:hover {
+    border-color: var(--primary);
+}
+
+.date-picker input[type="date"] {
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+/* Alert messages */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 0;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Attendance Stats */
+.attendance-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-item {
+    background: var(--bg-secondary);
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-item.present .stat-number {
+    color: var(--success);
+}
+
+.stat-item.absent .stat-number {
+    color: var(--danger);
+}
+
+.stat-item.ontime .stat-number {
+    color: var(--info);
+}
+
+.stat-item.late .stat-number {
+    color: var(--warning);
+}
+
+/* Card Styles */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Employee Cell */
+.employee-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-cell strong {
+    font-weight: 600;
+}
+
+.employee-cell span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Table Row Editing */
+tr.editing {
+    background: rgba(239, 65, 54, 0.05);
+}
+
+tr.editing td {
+    padding: 8px 12px;
+}
+
+/* Time Input */
+.time-input {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    width: 100px;
+}
+
+.time-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Status Select */
+.status-select {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-btn.edit {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--info);
+}
+
+.action-btn.edit:hover {
+    background: var(--info);
+    color: white;
+}
+
+.action-btn.save {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.action-btn.save:hover {
+    background: var(--success);
+    color: white;
+}
+
+.action-btn.cancel {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+.action-btn.cancel:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .attendance-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .attendance-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

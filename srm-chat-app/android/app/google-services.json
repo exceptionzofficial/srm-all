@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731313230026",
+    "project_id": "srm-attendance-482409",
+    "storage_bucket": "srm-attendance-482409.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731313230026:android:63d4eb445986cb4b65a433",
+        "android_client_info": {
+          "package_name": "com.srm.employeechat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHTT_0SMra3SUcZzEEe7jMg1Tno2-1GMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,71 @@
+/* Analytics Page Styles */
+
+.analytics-page {
+    max-width: 1400px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.date-display {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.chart-card {
+    background: var(--bg-secondary);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+}
+
+.chart-container {
+    height: 400px;
+    position: relative;
+    width: 100%;
+}
+
+.chart-container-small {
+    height: 300px;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
