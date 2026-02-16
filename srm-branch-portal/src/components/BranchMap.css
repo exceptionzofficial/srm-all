@@ -1,0 +1,59 @@
+.branch-map-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.map-stats-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    /* Google Maps z-index compatibility */
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.stat-item .value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.stat-item.in .value {
+    color: #16a34a;
+}
+
+.stat-item.out .value {
+    color: #dc2626;
+}
+
+.map-loading {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    border-radius: 12px;
+    color: #6b7280;
+}
