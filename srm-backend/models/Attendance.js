@@ -22,6 +22,7 @@ async function createAttendance(attendanceData) {
         checkInLat: attendanceData.latitude,
         checkInLng: attendanceData.longitude,
         verificationMethod: 'face_recognition',
+        checkInImageUrl: attendanceData.checkInImageUrl || null,
         status: status,
         createdAt: timestamp,
     };
@@ -163,7 +164,7 @@ async function closeAllActiveSessions(employeeId) {
 /**
  * Update attendance for checkout
  */
-async function checkOut(attendanceId) {
+async function checkOut(attendanceId, imageUrl = null) {
     const timestamp = new Date().toISOString();
 
     // Get existing record first
@@ -184,6 +185,7 @@ async function checkOut(attendanceId) {
     const updated = {
         ...existing,
         checkOutTime: timestamp,
+        checkOutImageUrl: imageUrl || null,
     };
 
     const putCommand = new PutCommand({

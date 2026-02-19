@@ -9,6 +9,7 @@ const { searchFace } = require('../utils/rekognition');
 const { getGeofenceSettings, getAttendanceSettings } = require('../models/Settings');
 const { isWithinGeofence } = require('../utils/geofence');
 const { calculateDailyStatus } = require('../utils/attendanceCalculator');
+const { uploadFile } = require('../utils/s3');
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -244,12 +245,23 @@ router.post('/check-in', upload.single('image'), async (req, res) => {
             });
         }
 
+        // Upload check-in photo to S3 (Audit Trail)
+        let checkInImageUrl = null;
+        try {
+            checkInImageUrl = await uploadFile(imageBuffer, `attendance/${employeeId}`, 'image/jpeg');
+            console.log(`[Check-in] Photo uploaded to S3: ${checkInImageUrl}`);
+        } catch (uploadError) {
+            console.error('[Check-in] Failed to upload photo to S3:', uploadError);
+            // Continue check-in even if upload fails? Ideally yes, but maybe log it.
+        }
+
         // Create attendance record
         const attendance = await Attendance.createAttendance({
             employeeId,
             latitude: parseFloat(latitude),
             longitude: parseFloat(longitude),
             type, // Store OFFICE or TRAVEL
+            checkInImageUrl,
         });
 
         // Start GPS tracking for this employee
@@ -343,8 +355,17 @@ router.post('/check-out', upload.single('image'), async (req, res) => {
             });
         }
 
+        // 4. Upload check-out photo to S3
+        let checkOutImageUrl = null;
+        try {
+            checkOutImageUrl = await uploadFile(imageBuffer, `attendance/${employeeId}`, 'image/jpeg');
+            console.log(`[Check-out] Photo uploaded to S3: ${checkOutImageUrl}`);
+        } catch (uploadError) {
+            console.error('[Check-out] Failed to upload photo to S3:', uploadError);
+        }
+
         // Update with checkout
-        const updated = await Attendance.checkOut(attendance.attendanceId);
+        const updated = await Attendance.checkOut(attendance.attendanceId, checkOutImageUrl);
         const employee = await Employee.getEmployeeById(employeeId);
 
         // Stop GPS tracking for this employee

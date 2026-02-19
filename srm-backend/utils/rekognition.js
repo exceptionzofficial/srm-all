@@ -83,7 +83,7 @@ async function searchFace(imageBuffer) {
                 Bytes: imageBuffer,
             },
             MaxFaces: 1,
-            FaceMatchThreshold: 80, // 80% similarity threshold
+            FaceMatchThreshold: 95, // Increased to 95% to prevent "ghosty" matches
         });
 
         const response = await rekognitionClient.send(command);
